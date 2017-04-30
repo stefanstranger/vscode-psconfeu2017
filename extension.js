@@ -40,7 +40,7 @@ function agendaLoaded(error, response, body) {
 
     vscode.workspace.registerTextDocumentContentProvider('psconfeu', docProvider);
     vscode.commands.executeCommand("vscode.previewHtml",
-        vscode.Uri.parse('psconfeu://agenda'), vscode.ViewColumn.One)
+        vscode.Uri.parse('psconfeu:/psconfeu/agenda'), vscode.ViewColumn.One)
         .then(() => 1, error => console.log(error));
 }
 
@@ -53,7 +53,7 @@ function activate(context) {
     // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "vscode-psconfeu2017" is now active!');
 
-    var psconfeuagenda = vscode.commands.registerCommand('extension.getPSConfEUAgenda', loadAgenda(psconfeuuri));
+    var psconfeuagenda = vscode.commands.registerCommand('extension.getPSConfEUAgenda', () => loadAgenda(psconfeuuri));
     context.subscriptions.push(psconfeuagenda);
 }
 exports.activate = activate;
