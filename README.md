@@ -1,6 +1,6 @@
-# vscode-psconfeu2017 README
+# Visual Studio Code PSConfEU Agenda extension
 
-This is the README for your extension "vscode-psconfeu2017". After writing up a brief description, we recommend including the following sections.
+This extension shows the PSConfEU Agenda for 2017 within VSCode.
 
 ## Features
 

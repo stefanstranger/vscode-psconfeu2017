@@ -4,12 +4,26 @@
     "description": "PowerShell Conference Europe 2017 Agenda VSCode Extension",
     "version": "0.0.1",
     "icon": "icon.png",
-    "publisher": "Stefan",
+    "publisher": "stefanstranger",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/stefanstranger/vscode-psconfeu2017"
+    },
+    "homepage": "https://github.com/stefanstranger/vscode-psconfeu2017/master/README.md",
+    "bugs": {
+        "url": "https://github.com/stefanstranger/vscode-psconfeu2017/issues"
+    },
     "engines": {
         "vscode": "^1.11.0"
     },
     "categories": [
         "Other"
+    ],
+    "keywords": [
+        "PowerShell",
+        "Agenda",
+        "communication",
+        "collaboration"
     ],
     "activationEvents": [
         "onCommand:extension.getPSConfEUAgenda"
@@ -27,12 +41,17 @@
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "node ./node_modules/vscode/bin/test"
     },
+    "dependencies": {
+        "request": "^2.81.0",
+        "node-json2html": "^1.1.1"
+    },
     "devDependencies": {
         "typescript": "^2.0.3",
         "vscode": "^1.0.0",
         "mocha": "^2.3.3",
         "eslint": "^3.6.0",
         "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
+        "@types/mocha": "^2.2.32",
+        "@types/request": "^0.0.42"
     }
 }
