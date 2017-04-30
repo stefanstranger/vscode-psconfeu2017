@@ -3,6 +3,7 @@
     "displayName": "vscode-psconfeu2017",
     "description": "PowerShell Conference Europe 2017 Agenda VSCode Extension",
     "version": "0.0.1",
+    "icon": "icon.png",
     "publisher": "Stefan",
     "engines": {
         "vscode": "^1.11.0"
