@@ -6,8 +6,9 @@ var vscode = require('vscode');
 var request, options;
 request = require('request');
 var json2html = require('node-json2html');
+const psconfeuuri = 'http://www.psconf.eu/AllSessions.json';
 
-
+// Load PSConfEU Agenda from 'http://www.psconf.eu/AllSessions.json'
 function loadAgenda(uri) {
     options = {
         url: uri,
@@ -17,8 +18,9 @@ function loadAgenda(uri) {
     request(options, agendaLoaded);
 }
 
-
+// Format result from web request to html using node-json2html module
 function agendaLoaded(error, response, body) {
+    // json2html transform template
     var transform = {
         "<>": "ul", "style": "font-family: Verdana, Arial, Helvetica, sans-serif", "html": [
             { "<>": "li", "style": "background:green", "html": "Title: ${Title}" },
@@ -51,7 +53,7 @@ function activate(context) {
     // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "vscode-psconfeu2017" is now active!');
 
-    var psconfeuagenda = vscode.commands.registerCommand('extension.getPSConfEUAgenda', loadAgenda('http://www.psconf.eu/AllSessions.json'));
+    var psconfeuagenda = vscode.commands.registerCommand('extension.getPSConfEUAgenda', loadAgenda(psconfeuuri));
     context.subscriptions.push(psconfeuagenda);
 }
 exports.activate = activate;
