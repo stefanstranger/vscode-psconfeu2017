@@ -7,3 +7,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Initial release
 ## 1.0.1
 - README updated.
+## 1.0.2
+- Small changes.

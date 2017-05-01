@@ -34,4 +34,8 @@ Initial release of PSConfEU 2017 VSCode extension.
 
 Updated README.md file. Image was not being shown.
 
+### 1.0.2
+
+Small changes
+
 -----------------------------------------------------------------------------------------------------------
