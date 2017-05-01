@@ -10,7 +10,7 @@ This extension is a submission for the Agenda Competition!
 
 This extension shows the PSConfEU Agenda for 2017 within VSCode. 
 
-![Image](https://github.com/stefanstranger/vscode-psconfeu2017/blob/master/psconfeuvscodeextension.gif)
+![Image](./psconfeuvscodeextension.gif)
 
 ## Requirements
 
@@ -29,5 +29,9 @@ There are no know issues at the moment.
 ### 1.0.0
 
 Initial release of PSConfEU 2017 VSCode extension.
+
+### 1.0.1
+
+Updated README.md file. Image was not being shown.
 
 -----------------------------------------------------------------------------------------------------------
