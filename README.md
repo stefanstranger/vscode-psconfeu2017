@@ -12,6 +12,10 @@ This extension shows the PSConfEU Agenda for 2017 within VSCode.
 
 ![Image](./psconfeuvscodeextension.gif)
 
+Commands implemented:
+- PSConfEU: Filter Agenda. Command to filter Agenda on search criteria.
+- PSConfEU: Get Agenda. Command to return complete Agenda.
+
 ## Requirements
 
 This VSCode does not need any extra requirements.
@@ -37,5 +41,8 @@ Updated README.md file. Image was not being shown.
 ### 1.0.2
 
 Small changes
+### 1.0.3
+
+Added filter command to filter on search criteria.
 
 -----------------------------------------------------------------------------------------------------------

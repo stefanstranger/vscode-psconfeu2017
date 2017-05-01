@@ -9,3 +9,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - README updated.
 ## 1.0.2
 - Small changes.
+
+## 1.0.3
+- Added filter command to filter on search criteria.
