@@ -7,6 +7,18 @@ var request, options;
 request = require('request');
 var json2html = require('node-json2html');
 const psconfeuuri = 'http://www.psconf.eu/AllSessions.json';
+var transform = {
+    "<>": "ul", "style": "font-family: Verdana, Arial, Helvetica, sans-serif", "html": [
+        { "<>": "li", "style": "background:green", "html": "Title: ${Title}" },
+        { "<>": "li", "style": "font:arial", "html": "SpeakerList: ${SpeakerList}" },
+        { "<>": "li", "html": "Room: ${Room}" },
+        { "<>": "li", "html": "StartTime: ${StartTime}" },
+        { "<>": "li", "html": "EndTime: ${EndTime}" },
+        { "<>": "li", "html": "Audience: ${Audience}" },
+        { "<>": "li", "html": "TracksList: ${TracksList}" },
+        { "<>": "li", "html": "Description: ${Description}" },
+    ]
+}
 
 // Load PSConfEU Agenda from 'http://www.psconf.eu/AllSessions.json'
 function loadAgenda(uri) {
@@ -21,18 +33,6 @@ function loadAgenda(uri) {
 // Format result from web request to html using node-json2html module
 function agendaLoaded(error, response, body) {
     // json2html transform template
-    var transform = {
-        "<>": "ul", "style": "font-family: Verdana, Arial, Helvetica, sans-serif", "html": [
-            { "<>": "li", "style": "background:green", "html": "Title: ${Title}" },
-            { "<>": "li", "style": "font:arial", "html": "SpeakerList: ${SpeakerList}" },
-            { "<>": "li", "html": "Room: ${Room}" },
-            { "<>": "li", "html": "StartTime: ${StartTime}" },
-            { "<>": "li", "html": "EndTime: ${EndTime}" },
-            { "<>": "li", "html": "Audience: ${Audience}" },
-            { "<>": "li", "html": "TracksList: ${TracksList}" },
-            { "<>": "li", "html": "Description: ${Description}" },
-        ]
-    }
     jsonData = eval(body);
     const docProvider = {
         provideTextDocumentContent: () => json2html.transform(jsonData, transform)
@@ -54,19 +54,6 @@ function loadfilteredAgenda(uri) {
 }
 
 function filterAgendaLoaded(error, response, body) {
-    // json2html transform template
-    var transform = {
-        "<>": "ul", "style": "font-family: Verdana, Arial, Helvetica, sans-serif", "html": [
-            { "<>": "li", "style": "background:green", "html": "Title: ${Title}" },
-            { "<>": "li", "style": "font:arial", "html": "SpeakerList: ${SpeakerList}" },
-            { "<>": "li", "html": "Room: ${Room}" },
-            { "<>": "li", "html": "StartTime: ${StartTime}" },
-            { "<>": "li", "html": "EndTime: ${EndTime}" },
-            { "<>": "li", "html": "Audience: ${Audience}" },
-            { "<>": "li", "html": "TracksList: ${TracksList}" },
-            { "<>": "li", "html": "Description: ${Description}" },
-        ]
-    }
     vscode.window.showInputBox({ prompt: "Please enter [search string]" }).then(
         function (filter) {
             vscode.window.showInformationMessage('Search String used: ' + filter)
