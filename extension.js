@@ -19,6 +19,7 @@ var transform = {
         { "<>": "li", "html": "Description: ${Description}" },
     ]
 }
+var toDay = (new Date().toISOString().slice(0, 10).replace(/-/g, "-"));
 
 // Load PSConfEU Agenda from 'http://www.psconf.eu/AllSessions.json'
 function loadAgenda(uri) {
@@ -81,6 +82,34 @@ function filterAgendaLoaded(error, response, body) {
 }
 
 
+function loadtoDaysAgenda(uri) {
+    options = {
+        url: uri,
+        value: 'application/json'
+    };
+    //Start the request
+    request(options, toDaysAgendaLoaded);
+}
+
+function toDaysAgendaLoaded(error, response, body) {
+    jsonData = eval(body);
+    filter = toDay;
+    //Empty array
+    newArray = [];
+    jsonData.filter(function (el) {
+        if (el.StartTime.match(new RegExp(filter, "i"))) { newArray.push(el) }
+    });
+    const docProvider = {
+        provideTextDocumentContent: () => json2html.transform(newArray, transform)
+    };
+
+    vscode.workspace.registerTextDocumentContentProvider('psconfeu', docProvider);
+    vscode.commands.executeCommand("vscode.previewHtml",
+        vscode.Uri.parse('psconfeu:/psconfeu/agenda'), vscode.ViewColumn.One)
+        .then(() => 1, error => console.log(error));
+}
+
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate(context) {
@@ -94,6 +123,9 @@ function activate(context) {
     // Filter Agenda
     var filterpsconfeuagenda = vscode.commands.registerCommand('extension.filterPSConfEUAgenda', () => loadfilteredAgenda(psconfeuuri));
     context.subscriptions.push(filterpsconfeuagenda);
+    // Today's Agenda
+    var toDayspsconfeuagenda = vscode.commands.registerCommand('extension.toDaysPSConfEUAgenda', () => loadtoDaysAgenda(psconfeuuri));
+    context.subscriptions.push(toDayspsconfeuagenda);
 
 
 }

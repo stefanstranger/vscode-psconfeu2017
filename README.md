@@ -15,6 +15,7 @@ This extension shows the PSConfEU Agenda for 2017 within VSCode.
 Commands implemented:
 - PSConfEU: Filter Agenda. Command to filter Agenda on search criteria.
 - PSConfEU: Get Agenda. Command to return complete Agenda.
+- PSConfEU: ToDay's Agenda. Command to return Agenda sessions for today.
 
 ## Requirements
 
@@ -44,5 +45,9 @@ Small changes
 ### 1.0.3
 
 Added filter command to filter on search criteria.
+
+### 1.0.4
+
+Added today's agenda command to filter on search criteria.
 
 -----------------------------------------------------------------------------------------------------------

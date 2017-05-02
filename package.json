@@ -2,7 +2,7 @@
     "name": "vscode-psconfeu2017",
     "displayName": "vscode-psconfeu2017",
     "description": "PowerShell Conference Europe 2017 Agenda VSCode Extension",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "icon": "icon.png",
     "publisher": "stefanstranger",
     "repository": {
@@ -27,7 +27,8 @@
     ],
     "activationEvents": [
         "onCommand:extension.getPSConfEUAgenda",
-        "onCommand:extension.filterPSConfEUAgenda"
+        "onCommand:extension.filterPSConfEUAgenda",
+        "onCommand:extension.toDaysPSConfEUAgenda"
     ],
     "main": "./extension",
     "contributes": {
@@ -39,6 +40,10 @@
             {
                 "command": "extension.filterPSConfEUAgenda",
                 "title": "PSConfEU: Filter Agenda"
+            },
+            {
+                "command": "extension.toDaysPSConfEUAgenda",
+                "title": "PSConfEU: ToDay's Agenda"
             }
         ]
     },
