@@ -50,4 +50,8 @@ Added filter command to filter on search criteria.
 
 Added today's agenda command to filter on search criteria.
 
+### 1.0.5 
+
+Added keybindings for Bartek Bielawski.
+
 -----------------------------------------------------------------------------------------------------------

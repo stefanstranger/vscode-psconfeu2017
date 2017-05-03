@@ -13,3 +13,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Added filter command to filter on search criteria.
 ## 1.0.4
 - Added today's agenda command to filter on search criteria.
+## 1.0.5
+- Added keybindings for Bartek Bielawski.
