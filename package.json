@@ -45,6 +45,20 @@
                 "command": "extension.toDaysPSConfEUAgenda",
                 "title": "PSConfEU: ToDay's Agenda"
             }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.getPSConfEUAgenda",
+                "key": "ctrl+alt+a"
+            },
+            {
+                "command": "extension.filterPSConfEUAgenda",
+                "key": "ctrl+alt+f"
+            },
+            {
+                "command": "extension.toDaysPSConfEUAgenda",
+                "key": "ctrl+alt+t"
+            }
         ]
     },
     "scripts": {
